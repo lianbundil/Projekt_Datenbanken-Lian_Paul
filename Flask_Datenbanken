@@ -1,0 +1,19 @@
+from flask import Flask
+from flask import render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "Hello World"
+
+@app.route("/hello/<string:username>")
+def hello_user(username):
+    return f"<html><head></head><body>Hello <b>{username} </b></body></html>"
+
+@app.route("/hello_flask")
+def hello_flask():
+    return render_template(
+        "template.html",
+        title="Hello Flask",
+        description="This is my first website!")
