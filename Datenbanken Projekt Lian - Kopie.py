@@ -25,7 +25,20 @@ def hello_flask2():
     return render_template(
         "template.html",
         title="Hello Flask 2",
-        description="This is my second website!")
+        description="This is our website!")
+
+@app.route("/hello_flask_football")
+def hello_flask_football():
+    return render_template(
+        "template.html",
+        title="Hello Flask Football",
+        description="Welcher Spieler interessiert Dich?")
+
+def hello_flask_football():
+    return render_template(
+       "template.html",
+       title="Hello Flask Football",
+        description="Gib seinen Namen hier ein hier ein:_______________________")
 
 
 @app.route("/add_user", methods=["GET", "POST"])
